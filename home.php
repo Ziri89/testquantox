@@ -1,5 +1,4 @@
-
-  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml"> 
 <head> 
 <title>Quantox Test</title> 
@@ -41,25 +40,3 @@
 	<li><a href="registration.php">Register</a></li>  
   </ul> 
 </div> 
-<center> <h1>Login form</h1> </center>   
-    <form>  
-        <div class="container">   
-            <label>Email : </label>   
-            <input type="text" placeholder="Enter email" name="email" required>  
-            <label>Password : </label>   
-            <input type="password" placeholder="Enter password" name="password" required>  
-            <button type="submit">Login</button>          
-        </div>   
-    </form>     
-    
-</body> 
-</html>
-
-
-
-
-
-
-
-
-
