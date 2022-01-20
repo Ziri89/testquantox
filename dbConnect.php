@@ -1,17 +1,8 @@
-<?php  
-    class dbConnect {  
-        function __construct() {  
-            require_once('config.php');  
-            $conn = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);  
-            mysql_select_db(DB_DATABSE, $conn);  
-            if(!$conn)  
-            {  
-                die ("Cannot connect to the database");  
-            }   
-            return $conn;  
-        }  
-        public function Close(){  
-            mysql_close();  
-        }  
-    }  
-?>  
+<?php
+    
+    $con = mysqli_connect("localhost","root","","quantox","3308");
+   
+    if (mysqli_connect_errno()){
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
+?>

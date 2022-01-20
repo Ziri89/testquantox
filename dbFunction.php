@@ -1,5 +1,5 @@
 <?php  
-require_once 'dbConnect.php';  
+/*require_once 'dbConnect.php';  
 session_start();  
     class dbFunction {  
             
@@ -11,16 +11,21 @@ session_start();
         function __destruct() {  
               
         }  
+        
         public function UserRegister($name, $email, $password){  
                 $password = md5($password);  
-                $qr = mysql_query("INSERT INTO users(name, email, password) values('".$name."','".$email."','".$password."')") or die(mysql_error());  
+        global $conn;
+
+                $qr = mysqli_query("INSERT INTO users(name, email, password) values('".$name."','".$email."','".$password."')", $conn);  
                 return $qr;  
                
         }  
         public function Login($email, $password){  
-            $result = mysql_query("SELECT * FROM users WHERE email = '".$email."' AND password = '".md5($password)."'");  
-            $user_data = mysql_fetch_array($result);   
-            $no_rows = mysql_num_rows($result);  
+        global $conn;
+
+            $result = mysqli_query($conn, "SELECT * FROM users WHERE email = '".$email."' AND password = '".md5($password)."'");  
+            $user_data = mysqli_fetch_array($result);   
+            $no_rows = mysqli_num_rows($result);  
               
             if ($no_rows == 1)   
             {  
@@ -37,13 +42,14 @@ session_start();
             }  
         }  
         public function isUserExist($email){  
-            $query = mysql_query("SELECT * FROM users WHERE email = '".$email."'");  
-            echo $row = mysql_num_rows($query);  
-            if($row > 0){  
-                return true;  
-            } else {  
-                return false;  
+        global $conn;
+
+        $query = mysqli_query($conn, "SELECT * FROM users WHERE email='".$email."'");
+            if(mysqli_num_rows($query) > 0){
+               echo "email already exists";
             }  
         }  
-    }  
-?> 
+    }
+
+?>
+
